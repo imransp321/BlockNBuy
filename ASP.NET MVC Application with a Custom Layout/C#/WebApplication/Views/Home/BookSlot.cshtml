@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "BookSlot";
+}
+@section Menu {
+    @Scripts.Render("~/Scripts/Examples/Blank/menu")
+}
+<script>
+    function Confirmation() {
+        window.open("/Home/ConfirmSlot", "_self");
+
+    }
+    function Selection(id) {
+        //this.class = "time_slot_divbox bg-green";
+        document.getElementById(id).classList.add('bg-green')
+
+        document.getElementById(id).classList.remove('bg-aqua');
+
+    }
+
+</script>
+<style>
+    .time_slot_divbox {
+        border: 1px solid #DADFE2;
+        padding: 8px 18px;
+        padding-top: 8px;
+        text-align: center;
+        border-radius: 3px;
+        float: left;
+        margin-right: 10px;
+        cursor: pointer;
+        font-weight: 500;
+    }
+
+    .time_slot_divboxdisabled {
+        border: 1px solid #DADFE2;
+        padding: 8px 18px;
+        padding-top: 8px;
+        text-align: center;
+        border-radius: 3px;
+        float: left;
+        margin-right: 10px;
+        cursor: none;
+        font-weight: 500;
+        background-color: #f4f4f4
+    }
+
+
+    .time_slot_divbox.time {
+        font-size: 13px;
+        line-height: 0px;
+        font-weight: 400;
+    }
+</style>
+<div class="box">
+    <div class="box-header with-border">
+        <h3 class="box-title">Select a Time Slot</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+
+        </div>
+    </div>
+    <div class="box-body">
+
+        <div align="center">
+            <button type="button" class="btn btn-default"></button>&nbsp;<label style="font-size:10px">N/A</label>&nbsp;&nbsp;
+            <button type="button" class="btn btn-danger"></button>&nbsp;<label style="font-size:10px">Full</label>&nbsp;&nbsp;
+            <button type="button" class="btn btn-warning"></button>&nbsp;<label style="font-size:10px">Getting Full</label>&nbsp;&nbsp;
+            <button type="button" class="btn btn-info"></button>&nbsp;<label style="font-size:10px">Available</label>&nbsp;&nbsp;
+            <button type="button" class="btn btn-success"></button>&nbsp;<label style="font-size:10px">Selected</label>
+        </div>
+        <br />
+        <div id="slotSelection" align="center">
+            <label>
+                <input type='radio' value='-1' id='111' class='hide' name='time' disabled />
+                <div class='time_slot_divboxdisabled' title="Not Applicable"><div class='time'>08:00 AM to 09:00 AM</div></div>
+            </label>
+            <label>
+                <input type='radio' value='0' id='0' class='hide' name='time' disabled />
+                <div class='time_slot_divboxdisabled' title="Not Applicable">
+                    <div class='time'>09:00 AM to 10:00 AM</div>
+                </div>
+            </label>
+            <br />
+            <label>
+                <input type='radio' value='1' id='1' class='hide' name='time' />
+                <div class='time_slot_divbox bg-yellow' title="Getting Full"><div class='time'>10:00 AM to 11:00 AM</div></div>
+            </label>
+            <label>
+                <input type='radio' value='2' id='2' class='hide' name='time' />
+                <div class='time_slot_divbox bg-aqua' title="Available" id="available" onclick="javascript:Selection('available');">
+                    <div class='time'>11:00 AM to 12:00 PM</div>
+                </div>
+            </label>
+            <br />
+            <label>
+                <input type='radio' value='3' id='3' class='hide' name='time' />
+                <div class='time_slot_divbox bg-aqua' title="Available" id="available1" onclick="Selection('available1');">
+                    <div class='time'>12:00 PM to 01:00 PM</div>
+                </div>
+            </label><label>
+                <input type='radio' value='4' id='4' class='hide' name='time' />
+                <div class='time_slot_divbox bg-aqua' title="Available" id="available2" onclick="Selection('available2');">
+                    <div class='time'>01:00 PM to 02:00 PM</div>
+                </div>
+            </label><br />
+            <label>
+                <input type='radio' value='5' id='5' class='hide' name='time' disabled />
+                <div class='time_slot_divbox bg-red' title="Full"><div class='time'>02:00 PM to 03:00 PM</div></div>
+            </label>
+            <label>
+                <input type='radio' value='6' id='6' class='hide' name='time' />
+                <div class='time_slot_divbox bg-aqua' title="Available" id="available3" onclick="javascript:Selection('available3');"><div class='time'>03:00 PM to 04:00 PM</div></div>
+            </label>
+            <br />
+            <label>
+                <input type='radio' value='7' id='7' class='hide' name='time' />
+                <div class='time_slot_divbox bg-yellow' title="Getting Full"><div class='time'>04:00 PM to 05:00 PM</div></div>
+            </label>
+            <label>
+                <input type='radio' value='8' id='8' class='hide' name='time' />
+                <div class='time_slot_divbox bg-red' title="Full"><div class='time'>05:00 PM to 06:00 PM</div></div>
+            </label>
+            <br />
+            <label>
+                <input type='radio' value='9' id='9' class='hide' name='time' />
+                <div class='time_slot_divbox bg-aqua' title="Available" id="available4" onclick="javascript:Selection('available4');"><div class='time'>06:00 PM to 07:00 PM</div></div>
+            </label>
+            <label>
+                <input type='radio' value='10' id='q0' class='hide' name='time' />
+                <div class='time_slot_divbox bg-red' title="Full"><div class='time'>07:00 PM to 08:00 PM</div></div>
+            </label>
+            <br />
+
+            <label>
+                <input type='radio' value='12' id='12' class='hide' name='time' />
+                <div class='time_slot_divbox bg-yellow' title="Getting Full"><div class='time'>08:00 PM to 09:00 PM</div></div>
+            </label>
+            <label>
+                <input type='radio' value='11' id='11' class='hide' name='time' />
+                <div class='time_slot_divboxdisabled' title="Not Applicable"><div class='time'>09:00 PM to 10:00 PM</div></div>
+            </label>
+            <br />
+            <br />
+            <div style="width:32%;align-self:center">
+                <button type="button" class="btn btn-block btn-info btn-sm" onclick="javascript: Confirmation();">Confirm</button>
+
+            </div>
+
+        </div>
+        <br />
+
+        <br />
+
+
+    </div>
+
+
+</div>
+
+
